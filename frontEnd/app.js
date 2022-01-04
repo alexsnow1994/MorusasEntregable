@@ -1,1 +1,3 @@
-alert('WORKS!!')
+alert('WORKS!!');
+
+require('./styles/styles.css');

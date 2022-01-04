@@ -1,27 +1,42 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// module.exports = {
-//     mode: 'production',
-//   };
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports ={
-    // mode: 'production',
+    // mode: 'none',
     entry: '/frontEnd/app.js',
     output: {
         path: path.join(__dirname, '/backEnd/public'),
-        filename: 'bundle.js' 
+        filename: 'js/bundle.js' 
+    },
+    module:{
+        rules: [
+            {
+                test: /\.css/,
+                use: [
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    'css-loader'
+                ]
+            }
+        ]
     },
     plugins: [
         new HtmlWebpackPlugin({
             template : './frontEnd/index.html',
             minify: {
-                collapseInlineTagWhitespace: true,
+                collapseWhitespace: true,
+                keepClosingSlash: true,
                 removeComments: true,
-                removeEmptyAttributes: true,
+                removeRedundantAttributes: true,
                 removeScriptTypeAttributes: true,
                 removeStyleLinkTypeAttributes: true,
                 useShortDoctype: true
             }
+        }),
+        new MiniCssExtractPlugin ({
+            filename: 'css/bundle.css',
         })
-    ]
+    ],
+    devtool: 'source-map'
 }

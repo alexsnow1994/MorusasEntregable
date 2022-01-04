@@ -1,0 +1,1 @@
+{"version":3,"file":"css/bundle.css","mappings":"AAAA;IACI,sBAAsB;IACtB,UAAU;AACd,C","sources":["webpack://testapi/./frontEnd/styles/styles.css"],"sourcesContent":["body {\n    background-color: aqua;\n    color: red;\n}"],"names":[],"sourceRoot":""}
