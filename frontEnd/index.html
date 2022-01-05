@@ -4,9 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- boostrap frame-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     <!-- animate css-->
+    <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>libreria JS</title>
 </head>
 <body>
-    <h1>hello world</h1>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a href="/" class="navbar-brand"> books app</a>
+            <div></div>
+        </div>
+    </nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4" >
+                    <form id="bookForm" class="card card-body">
+                        <div class="form-group">
+                            <input type="text" name="title" class="form-control" placeholder="book-title" autofocus>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="author" class="form-control" placeholder="Author" >
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="ISBN" class="form-control" placeholder="ISBN">
+                        </div>
+                        <div class="input-group mb-3">
+                            <div class="custom-file">
+                                <input type="file" class="custom-file-input" id="image">
+                                <label for="" class="custom-file-label">choose image</label>
+                            </div>
+                        </div>
+                        <button class="btn btn-primary">
+                            Save Book
+                        </button>
+                    </form>
+                </div>
+                <div class="col-md-8" >
+                    books
+                </div>
+            </div>
+        </div>
 </body>
 </html>
