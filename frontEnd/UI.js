@@ -11,7 +11,8 @@ class UI {
             let div = document.createElement('div');
             div.className = '';
             div.innerHTML = `
-             
+             div
+
             `;
         })
     };
