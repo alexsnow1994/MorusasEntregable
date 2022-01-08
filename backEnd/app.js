@@ -6,7 +6,7 @@ const express = require('express');
 const morgan = require('express');
 const multer = require('multer');
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 
 
 
@@ -35,6 +35,10 @@ app.use('/api/books', require('./routes/books'))
 
 /// static file 
 app.use(express.static(path.join(__dirname, 'public')))
+// app.configure(function(){
+//     server.use('/public', express.static(__dirname + '/public'));
+//     server.use(express.static(__dirname + '/public'));
+//     }); 
 
 
 //llamar
