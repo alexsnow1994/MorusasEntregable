@@ -16,7 +16,7 @@ class BookServices {
         let data = response.json()
         console.log(data);
     }
-    async delateBooks(bookid) {
+    async deleteBooks(bookid) {
         let response = await fetch(`${this.URI} /${bookid}`, {
             headers: {
                 'Content-Type': 'application/json'
