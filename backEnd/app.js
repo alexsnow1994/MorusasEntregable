@@ -6,7 +6,7 @@ const express = require('express');
 const morgan = require('express');
 const multer = require('multer');
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 
 
 
@@ -19,7 +19,7 @@ app.use(morgan('combined'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 const storage = multer.diskStorage({
-    destination: path.join(__dirname, '/public/uploads'),
+    destination: path.join(__dirname, '/public/uploads/'),
     filename(req, file, cb) {
         cb(null, new Date().getTime() + path.extname(file.originalname))
     }
@@ -42,3 +42,8 @@ app.use(express.static(path.join(__dirname, 'public')))
 app.listen(app.get('port'), () => {
     console.log(`lisent on port ${app.get('port')}`);
 })
+
+// app.configure(function(){
+//     server.use('/public', express.static(__dirname + '/public'));
+//     server.use(express.static(__dirname + '/public'));
+//     });
