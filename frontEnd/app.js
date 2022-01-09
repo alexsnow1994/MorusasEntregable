@@ -26,6 +26,19 @@ document.getElementById('book-form')
 
         let ui = new UI();
         ui.addNewBooks(formdata)
+        ui.renderMessage('New Books Added', 'success', 3000)
         console.log(title, author, isbn, image);
+        e.preventDefault();
+    });
+    
+    document.getElementById('books-cards');
+    addEventListener('click', e=> {
+        if (e.target.classList.contains('delete')){
+            console.log('eliminando');
+            const ui = new UI();
+            console.log(e.target.getAttribute('_id'));
+            ui.deleteBook(e.target.getAttribute('_id'))
+            ui.renderMessage('deleting book', 'danger',3000)
+        }
         e.preventDefault();
     });

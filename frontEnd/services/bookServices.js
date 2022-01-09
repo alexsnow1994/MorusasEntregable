@@ -16,10 +16,11 @@ class BookServices {
         let data = response.json()
         console.log(data);
     }
-    async deleteBooks(bookid) {
-        let response = await fetch(`${this.URI} /${bookid}`, {
+    async deleteBooks(bookId) {
+        let response = await fetch(`${this.URI}/${bookId}`, {
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
             },
             method: 'DELETE'
 

@@ -1,6 +1,7 @@
 import BookServices from "./services/bookServices";
 const bookServices = new BookServices();
 import {format} from 'timeago.js'
+
 class UI {
 
     async renderBooks() {
@@ -14,7 +15,7 @@ class UI {
              <div class="cards m-2">
                 <div class="row">
                     <div class="col-md-4>
-                    <a href="http://localhost:5000${book.imagePath}"><img src='http://localhost:5000${book.imagePath}' alt="" class="img-fluid"></a>
+                    <a href="#"><img src='http://localhost:5000${book.imagePath}' alt="" class="img-fluid"></a>
                     </div>
                     <div class="col-md-8">
                     <div class="card-block p-2">
@@ -30,24 +31,37 @@ class UI {
                     </div>
              </div>
             `;
-            booksCardsContainer.appendChild(div)
+            booksCardsContainer.appendChild(div);
         })
         
     };
     async addNewBooks(book) {
         await bookServices.postBooks(book);
         this.clearBooksForm();
+        this.renderBooks();
     };
 
     async clearBooksForm() {
-        document.getElementById('book-form').reset()
+        document.getElementById('book-form').reset();
     };
 
-    async renderMessage() {
+    async renderMessage(message, colorMessage, secondsToRemove) {
+        let div = document.createElement('div');
+        div.className= `alert alert- ${colorMessage} message ` ;
+        div.appendChild(document.createTextNode(message));
 
+        let container = document.querySelector('.col-md-4')
+        let bookForm= document.querySelector('#book-form');
+
+        container.insertBefore(div, bookForm);
+
+        setTimeout(()=> {
+            document.querySelector('.message').remove
+        } , secondsToRemove)
     };
-    async delateBook() {
-
+    async deleteBook(bookId) {
+        await bookServices.deleteBooks(bookId)
+        this.renderBooks();
     };
 
 }
