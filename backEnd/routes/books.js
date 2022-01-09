@@ -12,7 +12,7 @@ router.get('/', async(req, res) => {
 router.post('/', async(req, res) => {
     const { title, author, isbn } = req.body;
     const imagePath = '/backEnd/public/uploads/' + req.file.filename;
-    const newbook = new Book({ title, author, isbn, imagePath});
+    const newbook = new Book({ title, author, isbn, imagePath });
     await newbook.save()
     console.log(newbook);
     res.json({ message: 'save book' });

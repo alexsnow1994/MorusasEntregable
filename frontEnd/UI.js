@@ -15,7 +15,7 @@ class UI {
              <div class="cards m-2">
                 <div class="row">
                     <div class="col-md-4>
-                    <a href="#"><img src='http://localhost:5000${book.imagePath}' alt="" class="img-fluid"></a>
+                    <img src="http://localhost:5000${book.imagePath}" alt="" class="img-fluid"/>
                     </div>
                     <div class="col-md-8">
                     <div class="card-block p-2">
