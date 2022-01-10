@@ -1,7 +1,8 @@
 // git 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
 
 import './styles/app.css';
-import BookServices from './services/bookServices';
+//import BookServices from './services/bookServices'
+
 
 import UI from './UI';
 
@@ -31,14 +32,17 @@ document.getElementById('book-form')
         e.preventDefault();
     });
     
+   
+
+
     document.getElementById('books-cards');
-    addEventListener('click', e=> {
-        if (e.target.classList.contains('delete')){
-            console.log('eliminando');
-            const ui = new UI();
-            console.log(e.target.getAttribute('_id'));
-            ui.deleteBook(e.target.getAttribute('_id'))
-            ui.renderMessage('deleting book', 'danger',3000)
+    addEventListener('click', e => {
+        console.log(e.target);
+        if (e.target.classList.contains('delete')) {
+            let ui = new UI();
+            ui.deleteBook(e.target.getAttribute('_id'));
+            ui.renderMessage('deleting book', 'danger', 3000);
         }
         e.preventDefault();
     });
+

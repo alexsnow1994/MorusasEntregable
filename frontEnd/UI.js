@@ -15,13 +15,13 @@ class UI {
              <div class="cards m-2">
                 <div class="row">
                     <div class="col-md-4>
-                    <img src="http://localhost:5000${book.imagePath}" alt="" class="img-fluid"/>
+                    <a href="#"><img src="http://localhost:5000${book.imagePath}" alt="" class="img-fluid"></a>
                     </div>
                     <div class="col-md-8">
                     <div class="card-block p-2">
                         <h4 class="card-title">"${book.title}"</h4>
                         <p class="card-text">"${book.author}"</p>
-                        <a href=# class="bt btn-danger delete" _id="${book._id}">x</a>  
+                        <a href=# class="bt btn-danger delete" _id="${book._id}">Delete</a>  
                     </div>
                     </div>
                     
@@ -35,8 +35,9 @@ class UI {
         })
         
     };
-    async addNewBooks(book) {
-        await bookServices.postBooks(book);
+    async addNewBooks(books) {
+        await bookServices.postBooks(books);
+
         this.clearBooksForm();
         this.renderBooks();
     };
@@ -45,20 +46,20 @@ class UI {
         document.getElementById('book-form').reset();
     };
 
-    // async renderMessage(message, colorMessage, secondsToRemove) {
-    //     let div = document.createElement('div');
-    //     div.className= `alert alert- ${colorMessage} message ` ;
-    //     div.appendChild(document.createTextNode(message));
+    async renderMessage(message, colorMessage, secondsToRemove) {
+        let div = document.createElement('div');
+        div.className= `alert alert- ${colorMessage} message ` ;
+        div.appendChild(document.createTextNode(message));
 
-    //     let container = document.querySelector('.col-md-4')
-    //     let bookForm= document.querySelector('#book-form');
+        let container = document.querySelector('.col-md-4')
+        let bookForm= document.querySelector('#book-form');
 
-    //     container.insertBefore(div, bookForm);
+        container.insertBefore(div, bookForm);
 
-    //     setTimeout(()=> {
-    //         document.querySelector('.message').remove
-    //     } , secondsToRemove)
-    // };
+        setTimeout(()=> {
+            document.querySelector('.message').remove
+        } , secondsToRemove)
+    };
     async deleteBook(bookId) {
         await bookServices.deleteBooks(bookId)
         this.renderBooks();
