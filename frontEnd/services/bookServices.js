@@ -15,12 +15,13 @@ class BookServices {
         });
         let data = response.json()
         console.log(data);
+        //return data;
     }
     async deleteBooks(bookId) {
         let response = await fetch(`${this.URI}${bookId}`, {
             headers: {
                 'Content-Type': 'application/json',
-                'Accept': 'application/json'
+                //'Accept': 'application/json'
             },
             method: 'DELETE'
 
@@ -32,4 +33,4 @@ class BookServices {
     }
 }
 
-module.exports = BookServices;
+export default BookServices

@@ -48,7 +48,7 @@ class UI {
 
     async renderMessage(message, colorMessage, secondsToRemove) {
         let div = document.createElement('div');
-        div.className= `alert alert- ${colorMessage} message ` ;
+        div.className= `alert alert-${colorMessage} message ` ;
         div.appendChild(document.createTextNode(message));
 
         let container = document.querySelector('.col-md-4')
@@ -57,7 +57,7 @@ class UI {
         container.insertBefore(div, bookForm);
 
         setTimeout(()=> {
-            document.querySelector('.message').remove
+            document.querySelector('.message').remove();
         } , secondsToRemove)
     };
     async deleteBook(bookId) {
