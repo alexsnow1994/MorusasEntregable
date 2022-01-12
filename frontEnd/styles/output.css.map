@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AACA,CAAE;EACE,UAAU,EAAE,CAAC;;AAMjB,OAAQ;EACJ,UAAU,EAAE,OAAW;EACvB,UAAU,EAAE,4DAAyF",
+"sources": ["SCSS/modulos/_principal.scss"],
+"names": [],
+"file": "output.css"
+}
