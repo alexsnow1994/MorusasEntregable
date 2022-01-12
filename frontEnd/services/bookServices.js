@@ -1,6 +1,7 @@
 class BookServices {
     constructor() {
-        this.URI = 'https://localhost:5000/api/books';
+        this.URI = 'http://localhost:5000/api/books';
+        this.URID = 'http://localhost:5000/api/books/'
     }
     async getBooks() {
         let response = await fetch(this.URI);
@@ -8,7 +9,7 @@ class BookServices {
         return books;
     }
     async postBooks(book) {
-        let response = await fetch(this.URI, {
+        let response = await fetch(this.URID, {
             method: 'POST',
             body: book
 
