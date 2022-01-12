@@ -9,7 +9,7 @@ class BookServices {
         return books;
     }
     async postBooks(book) {
-        let response = await fetch(this.URID, {
+        let response = await fetch(this.URI, {
             method: 'POST',
             body: book
 
@@ -19,7 +19,7 @@ class BookServices {
         //return data;
     }
     async deleteBooks(bookId) {
-        let response = await fetch(`${this.URI}${bookId}`, {
+        let response = await fetch(`${this.URID}${bookId}`, {
             headers: {
                 'Content-Type': 'application/json',
                 //'Accept': 'application/json'
