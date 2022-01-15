@@ -27,7 +27,7 @@ const storage = multer.diskStorage({
 app.use(multer({ storage }).single('image'));
 app.use(cors());
 //
-//setings
+//setings 
 app.set('port', process.env.PORT || 3000)
 app.set('json espaces', 2)
     //rutas

@@ -18,6 +18,19 @@ class BookServices {
         console.log(data);
         //return data;
     }
+    async updateBooks(bookId){
+        let response = await fetch(`${this.URID}${bookId}`, {
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            method: 'PUT',
+            body: bookId
+        });
+        let data = await response.json();
+        return data();
+        console.log(data);
+    };
+
     async deleteBooks(bookId) {
         let response = await fetch(`${this.URID}${bookId}`, {
             headers: {

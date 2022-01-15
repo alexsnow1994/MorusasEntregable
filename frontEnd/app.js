@@ -6,13 +6,15 @@ import './styles/output.css'
 
 import UI from './UI';
 
+import Book from './models/book'
+
 render();
 
 agregar();
 
 eliminar();
 
-
+// update();
 
 
 function eliminar() {
@@ -28,6 +30,41 @@ function eliminar() {
             e.preventDefault();
         });
     }
+
+
+    // function update(){
+    //     document.getElementById('book-form').addEventListener('submit', e => {
+    //         if(e.submitter.classList.contains('UPDATE')){
+    //             console.log(e.submitter.classList.contains('UPDATE'));
+    //             let title = document.getElementById('title').value;
+    //                 let author = document.getElementById('author').value;
+    //                 let isbn = document.getElementById('isbn').value;
+    //                 let image = document.getElementById('image').files;
+        
+    //                 const mySet = new Set();
+        
+    //                 mySet.add('image', image[0]);
+    //                 mySet.add('title', title); 
+    //                 mySet.add('author', author); 
+    //                 mySet.add('isbn', isbn);
+    //                 let ui = new UI();
+    //             ui.updateBooks(e.submitter.getAttribute('_id'));
+    //             ui.renderMessage('update', 'warning', 3000);
+    //         }
+             
+    //         // let formdata = new FormData();
+    
+    //         //     formdata.append('image', image[0]);
+    //         //     formdata.append('isbn', isbn);
+    //         //     formdata.append('author', author);
+    //         //     formdata.append('title', title);
+    
+    
+            
+    //         e.preventDefault()
+    //     })
+    // }
+
 
 function agregar() {
     document.getElementById('book-form')
@@ -45,10 +82,19 @@ function agregar() {
             formdata.append('title', title);
 
             let ui = new UI();
-            ui.addNewBooks(formdata);
-            ui.renderMessage('New Books Added', 'success', 3000);
-            console.log(title, author, isbn, image);
-            e.preventDefault();
+            const book = new Book(title, author , isbn)
+
+            if (title === '' || author === '' || isbn === '') {
+                ui.renderMessage('Por favor rellena todos los espacios', 'danger', 3000);
+              } else {
+                
+                ui.addNewBooks(formdata);
+                ui.renderMessage('New Book Added Successfully', 'success', 2000);
+              }
+            // ui.addNewBooks(formdata);
+            // ui.renderMessage('New Books Added', 'success', 3000);
+            // console.log(title, author, isbn, image);
+            // e.preventDefault();
         });
 }
 
@@ -58,4 +104,3 @@ function render() {
         ui.renderBooks();
     });
 }
-

@@ -1,7 +1,9 @@
 const { Router } = require('express');
 const router = Router();
 const {unlink} = require('fs-extra');
-const path = require('path')
+const path = require('path');
+const {outputFile} =require('fs-extra')
+const { title } = require('process');
 
 const Book = require('../models/Book')
 
@@ -17,13 +19,18 @@ router.post('/', async(req, res) => {
     console.log(newbook);
     res.json({ message: 'save book' });
 })
-// router.update('/:id', async(req, res)=> {
-
-// });
+router.put('/:id', async(req,res)=>{
+    const book= await Book.findByIdAndUpdate(req.params.id,req.body);
+    outputFile(path.resolve('./backEnd/public'+book.imagePath));
+      console.log(book);
+      res.json({messaje:'Done'});
+      
+    
+  });
 
 router.delete('/:id', async(req, res) => {
-    const book = await Book.findByIdAndDelete(req.params.id)
-   unlink(path.resolve('./backEnd/public'+book.imagePath))
+    const book = await Book.findByIdAndDelete(req.params.id);
+   unlink(path.resolve('./backEnd/public'+book.imagePath));
     console.log(book);
     res.json({ message: 'delating' })
 })

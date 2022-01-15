@@ -1,12 +1,12 @@
 
 * {
-    box-sizing: 0;
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
 
 }
 body{
-    //background-color: pink;
-}
-.navbar {
-    background: rgb(2,0,36);
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(228,238,238,1) 0%, rgba(0,212,255,1) 100%);
+    font-family: Mochiy Pop P One;
+    background: rgb(34,193,195);
+background: linear-gradient(0deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
 }

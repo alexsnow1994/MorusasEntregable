@@ -1,8 +1,91 @@
 * {
-  box-sizing: 0; }
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%; }
+
+body {
+  font-family: Mochiy Pop P One;
+  background: #22c1c3;
+  background: linear-gradient(0deg, #22c1c3 0%, #fdbb2d 100%); }
+
+.transparente {
+  opacity: 0.8;
+  -moz-opacity: 0.8;
+  filter: alpha(opacity=80);
+  -khtml-opacity: 0.8; }
+
+#book-cards .transparente img {
+  width: 1000px;
+  height: 50%; }
+
+@keyframes moleculas {
+  to {
+    transform: rotate(360deg); } }
+#titulo .molecula {
+  width: 75px;
+  height: 75px;
+  border: solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 9%;
+  left: 25%;
+  animation: moleculas 1s linear infinite; }
+#titulo .circulo {
+  width: 70%;
+  height: 70%;
+  outline-style: solid;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); }
+#titulo .circulitos {
+  position: absolute;
+  height: 10px;
+  width: 10px;
+  background-color: yellow;
+  top: 10%;
+  border-radius: 50%; }
+#titulo .interior {
+  width: 40%;
+  height: 40%;
+  background-color: black; }
+
+#present img {
+  width: 600px; }
+@media (max-width: 1980px) {
+  #present {
+    img-object-fit: cover;
+    img-width: 100px;
+    img-height: 50%; } }
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%; }
+
+#header {
+  margin: 0%;
+  padding: 0%; }
+  #header .navbar p {
+    color: white; }
+  #header img {
+    width: 75px;
+    height: 100%; }
+  @media (max-width: 760px) {
+    #header img {
+      width: 50px;
+      height: 100%; } }
 
 .navbar {
-  background: #020024;
-  background: linear-gradient(90deg, #020024 0%, #e4eeee 0%, #00d4ff 100%); }
+  animation: animate__pulse;
+  animation-duration: 3s; }
+
+#morusas-video iframe {
+  justify-content: center; }
+
+#galeria_de_talleres img {
+  width: 405px;
+  height: 305px; }
 
 /*# sourceMappingURL=output.css.map */

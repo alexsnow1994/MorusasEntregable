@@ -1,0 +1,28 @@
+#header{
+    margin: 0%;
+    padding: 0%;
+    .navbar p{
+        color: white;
+    }
+    img{
+        width: 75px;
+        height: 100%;
+    }
+    @media (max-width:760px) {
+        img{
+            width: 50px;
+            height: 100%;
+        }
+    }
+}
+
+.navbar {
+    animation: animate__pulse;
+    animation-duration: 3s;
+    // background: rgb(2,0,36);
+    // background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(228,238,238,1) 0%, rgba(0,212,255,1) 100%);
+    // margin-top: auto;
+    // margin-bottom: 100%;
+}
+
+

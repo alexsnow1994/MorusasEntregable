@@ -1,5 +1,34 @@
 body{
     background-color: #f5f6fa;
 }
+* {
+  box-sizing: 0; }
+
+body {
+  font-family: Mochiy Pop P One; }
+
+.navbar {
+  animation: animate__pulse;
+  animation-duration: 3s;
+  background: #020024;
+  background: linear-gradient(90deg, #020024 0%, #e4eeee 0%, #00d4ff 100%); }
+
+#books-cards {
+  animation: animate__bounceInDown;
+  animation-duration: 6s; }
+
+@media (max-width: 1980px) {
+  #present {
+    img-object-fit: cover;
+    img-width: 635px;
+    img-height: 50%; } }
+
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%; }
+
+/*# sourceMappingURL=output.css.map */
+
 
 /*# sourceMappingURL=bundle.css.map*/

@@ -8,29 +8,79 @@
     <!-- boostrap frame-->
     <link rel="stylesheet" href="https://bootswatch.com/4/cosmo/bootstrap.min.css">
     <!-- animate css-->
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Mochiy Pop P One">
     <link rel="stylesheet" href="/frontEnd/styles/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <title>libreria JS</title>
 </head>
 
 <body>
+    <!-- encabezado -->
+    <header id='header'>
     <div class="container-fluid">
         <nav class="navbar">
-            <div class="container-fluid">
+            <div class="container-fluid" >
               <a class="navbar-brand" href="#">
                 <img src="/frontEnd/Fotos/LogoAlternativo-MorusasDeCiencia.jpeg" alt="" width="30" height="24" class="d-inline-block align-text-top">
                 MORUSAS DE CIENCIA
               </a>
+              
             </div>
-          </nav>   
+          </nav>
+        </nav>    
     </div>
-    
-    </nav>
-    <div class="container p-4">
-        <div class="row">
+    </header>
+    <!-- /encabezado -->
+    <main>
+        <!-- que es morusas -->
+        <section id='present'>
+            <div id= "titulo"class="container-fluid mt-4 mb-4">
+                <div class="row">
+                    <div class="col-9-md">
+                        <h1 >Quienes somos?</h1>
+                    </div>
+                    <div class='col-3 mb-5 pd-4'>
+                        <div class="molecula">
+                            <div class='circulo'>
+                                <div class='circulitos'>
+                                    
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='interior'>
+
+            </div>
+            
+            <div  class="container-fluid">
+                <div class="row">
+                    <div class="col-6 mt-4 mb-4">
+                        <p> Morusas de Ciencia es un proyecto de divulgación y difusión de la ciencia en el que se busca acercar los conocimientos de los laboratorios y espacios académicos a los barrios. Nuestro objetivo es generar experiencias divulgativas en espacios populares donde todos y todas sean libres de participar de manera activa, aprender y expresarse, pues creemos en el derecho a la cultura y el potencial de la Ciencia para transformar la calidad de vida de las personas. Este proyecto es interdisciplinario, puesto que se realizan actividades relacionadas con distintas percepciones del arte haciendo uso del conocimiento científico.</p>
+                    </div>
+                    <div  class="col-6">
+                        <img src="/frontEnd/Fotos/talleres/Conejo-en-la-luna.jpg" alt="" class='img-fluid'>
+                    </div>
+                </div>
+            </div>
+        </section>
+       <!--seccion de tu libro favorito -->
+       <div class="container-fluid mb-4 mt-4">
+           <div class="row">
+               <div class="col-12">
+                   <h1>Tu libro favorito nos dice mucho de ti, quieres compartirlo?</h1>
+               </div>
+           </div>
+       </div>
+      
+    <div class="container p-4 transparente">
+        <div class="row transparente">
             <div class="col-md-4">
-                <form id="book-form" class="card card-body">
-                    <div class="form-group mb-3">
+                <form id="book-form" class="card card-body transparente">
+                    <div class="form-group mb-3 ">
                         <input id="title" type="text" name="title" class="form-control" placeholder="book-title" autofocus>
                     </div>
                     <div class="form-group mb-3">
@@ -39,6 +89,7 @@
                     <div class="form-group mb-3">
                         <input id="isbn" type="text" name="ISBN" class="form-control" placeholder="ISBN">
                     </div>
+                    
                     <div class="input-group mb-3">
                         <div class='custom-file' >
                             <!-- <input type="file" class="custom-file-input" id="image">
@@ -49,9 +100,17 @@
                             <input type="file" class="custom-file-input" id="image">
                         </div>
                     </div>
-                    <button class="btn btn-primary">
-                            Save Book
+                    <button class="btn btn-primary mt-3 mb-3">
+                        Save Book
+                    </button>
+                    <div class="form-group mb-3">
+                        <input id="UPDATE" type="text" name="UPDATE" class="form-control" placeholder="UPDATE CON ID">
+                        <button id='updateBook' class='btn btn-primary mb-2 mt-2 UPDATE'>
+                            actualizar
                         </button>
+                        
+                    </div>
+                    
                 </form>
             </div>
             <div  id="books-cards" class="col-md-8">
@@ -59,6 +118,56 @@
             </div>
         </div>
     </div>
+    <!-- esto es morusas  -->
+    <section id="morusas-video">
+            <div class="container-fluid">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TGpkrld6SeY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+    </section>
+
+<!-- /seccion de tu libro favorito -->
+<section id="galeria_de_talleres" class="talleres t-5 b-5">
+    <h1 class="text-center">talleres</h1>
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-12 col-lg-4 p-3 b-3 ">
+                <img src="./Fotos/talleres/Puente-de-Da-Vinci.jpg" class="img-thumbnail" alt="">
+                <p>
+                    <!-- start slipsum code -->
+
+                    Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke.
+                    We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
+
+                    <!-- end slipsum code -->
+                </p>
+            </div>
+            <div class="col-12 col-lg-4 p-3 b-3">
+                <img src="./Fotos/Fotos2/1_talleres.jpg" class="img-thumbnail" alt="">
+                <p>hola
+                    <!-- start slipsum code -->
+
+                    Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke.
+                    We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
+
+                    <!-- end slipsum code -->
+                </p>
+            </div>
+
+            <div class="col-12 col-lg-4 p-3 b-3 t-3">
+                <img src="./Fotos/Fotos2/3_talleres.jpg" class="img-thumbnail" alt="">
+                <p>hola
+                    <!-- start slipsum code -->
+
+                    Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke.
+                    We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
+
+                    <!-- end slipsum code -->
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
 </body>
 
 </html>

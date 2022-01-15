@@ -1,0 +1,23 @@
+
+
+// #books-cards{
+//     animation: animate__bounceInDown;
+//     animation-duration: 6s;
+    
+// }
+.transparente{
+
+    opacity: 0.8;
+
+-moz-opacity: 0.8;
+
+filter: alpha(opacity=80);
+
+-khtml-opacity: 0.8;
+}
+#book-cards .transparente{
+    img{
+        width: 1000px;
+        height: 50%;
+    };
+}
