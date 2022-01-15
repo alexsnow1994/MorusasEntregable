@@ -38,8 +38,8 @@ class UI {
         })
         
     };
-    async updateBooks(bookId){
-        await bookServices.updateBooks(bookId)
+    async updateBooks(bookId, book){
+        await bookServices.updateBooks(bookId, book)
         this.clearBooksForm
         this.renderBooks
     }

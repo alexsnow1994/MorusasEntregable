@@ -20,8 +20,21 @@ router.post('/', async(req, res) => {
     res.json({ message: 'save book' });
 })
 router.put('/:id', async(req,res)=>{
-    const book= await Book.findByIdAndUpdate(req.params.id,req.body);
-    outputFile(path.resolve('./backEnd/public'+book.imagePath));
+    console.log(req.params.id);
+    console.log(req.body);
+    const { title, author, isbn } = req.body;
+    const imagePath = '/uploads/'+req.file.filename;
+    let book= await Book.findById(req.params.id);
+    book.title = title
+    book.author = author
+    book.isbn = isbn
+    book.imagePath = imagePath
+    book.save()
+    try {
+        outputFile(path.resolve('./backEnd/public'+book.imagePath));
+    } catch (error) {
+        console.log(error);
+    }
       console.log(book);
       res.json({messaje:'Done'});
       
@@ -30,7 +43,10 @@ router.put('/:id', async(req,res)=>{
 
 router.delete('/:id', async(req, res) => {
     const book = await Book.findByIdAndDelete(req.params.id);
-   unlink(path.resolve('./backEnd/public'+book.imagePath));
+   try {unlink(path.resolve('./backEnd/public'+book.imagePath));}
+   catch(err){
+       console.log(err);
+   }
     console.log(book);
     res.json({ message: 'delating' })
 })

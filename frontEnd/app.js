@@ -14,7 +14,7 @@ agregar();
 
 eliminar();
 
-// update();
+update();
 
 
 function eliminar() {
@@ -32,43 +32,43 @@ function eliminar() {
     }
 
 
-    // function update(){
-    //     document.getElementById('book-form').addEventListener('submit', e => {
-    //         if(e.submitter.classList.contains('UPDATE')){
-    //             console.log(e.submitter.classList.contains('UPDATE'));
-    //             let title = document.getElementById('title').value;
-    //                 let author = document.getElementById('author').value;
-    //                 let isbn = document.getElementById('isbn').value;
-    //                 let image = document.getElementById('image').files;
+    function update(){
+        document.getElementById('test').addEventListener('click', e => {
+            //if(e.submitter.classList.contains('UPDATE')){
+                //console.log(e.submitter.classList.contains('UPDATE'));
+                let title = document.getElementById('title').value;
+                    let author = document.getElementById('author').value;
+                    let isbn = document.getElementById('isbn').value;
+                    let image = document.getElementById('image').files;
         
-    //                 const mySet = new Set();
-        
-    //                 mySet.add('image', image[0]);
-    //                 mySet.add('title', title); 
-    //                 mySet.add('author', author); 
-    //                 mySet.add('isbn', isbn);
-    //                 let ui = new UI();
-    //             ui.updateBooks(e.submitter.getAttribute('_id'));
-    //             ui.renderMessage('update', 'warning', 3000);
-    //         }
+                    let formdata = new FormData();
+
+                    formdata.append('image', image[0]);
+                    formdata.append('isbn', isbn);
+                    formdata.append('author', author);
+                    formdata.append('title', title);
+                    let ui = new UI();
+                ui.updateBooks(document.getElementById('valueId').value, formdata);
+                ui.renderMessage('update', 'warning', 3000);
+            //}
              
-    //         // let formdata = new FormData();
+            // let formdata = new FormData();
     
-    //         //     formdata.append('image', image[0]);
-    //         //     formdata.append('isbn', isbn);
-    //         //     formdata.append('author', author);
-    //         //     formdata.append('title', title);
+            //     formdata.append('image', image[0]);
+            //     formdata.append('isbn', isbn);
+            //     formdata.append('author', author);
+            //     formdata.append('title', title);
     
     
             
-    //         e.preventDefault()
-    //     })
-    // }
+            e.preventDefault()
+        })
+    }
 
 
 function agregar() {
-    document.getElementById('book-form')
-        .addEventListener('submit', e => {
+    document.getElementById('createBook')
+        .addEventListener('click', e => {
             let title = document.getElementById('title').value;
             let author = document.getElementById('author').value;
             let isbn = document.getElementById('isbn').value;

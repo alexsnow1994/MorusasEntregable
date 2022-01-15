@@ -16,7 +16,7 @@ require('./database')
     //middelwares
 
 app.use(morgan('combined'))
-app.use(express.urlencoded({ extended: false }))
+app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 const storage = multer.diskStorage({
     destination: path.join(__dirname, '/public/uploads/'),

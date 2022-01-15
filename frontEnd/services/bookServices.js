@@ -18,13 +18,27 @@ class BookServices {
         console.log(data);
         //return data;
     }
-    async updateBooks(bookId){
+    async updateBooks(bookId, book){
+        // let object = {}
+        // let imagePath = ''
+        // book.forEach((value, key) => {
+        //     if(key == 'image'){
+
+        //         console.log(value, key);
+        //         imagePath = `/uploads/${value.lastModified}.png`
+        //         console.log(`/uploads/${value.lastModified}.png`);
+        //     }
+        //     object[key] = value
+        // });
+        // object['imagePath'] = imagePath
+        // const json = JSON.stringify(object)
+        // console.log(json);
         let response = await fetch(`${this.URID}${bookId}`, {
             headers: {
                 'Content-Type': 'application/json'
             },
             method: 'PUT',
-            body: bookId
+            body: book
         });
         let data = await response.json();
         return data();
